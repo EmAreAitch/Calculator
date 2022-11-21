@@ -1,0 +1,44 @@
+body {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.calculator {
+    height: 500px;
+    width: 350px;
+    border: 2px solid black;
+    border-radius: 20px;
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    flex-flow: column;
+    padding: 0px;
+    margin: 0px;
+}
+
+.output {
+    border: 2px solid black;
+    width: 300px;
+    height: 90px;
+    margin: 25px 0px;    
+}
+
+.operations {
+    width: 300px;
+    display: flex;
+    flex-wrap: wrap;
+    height: 335px;
+    align-items: center;
+    justify-content: center;
+}
+
+button {
+    width: 70px;
+    height: 70px;
+    margin: 2.5px;
+    border-radius: 20px;
+    border-style:groove;
+}
