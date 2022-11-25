@@ -6,11 +6,12 @@ body {
     height: 100vh;
     background: url(/assets/background.gif) center;
     background-size: cover;
-    padding: 10px;
+    padding: 0px;
+    margin: 0px;
 }
 
 .calculator {
-    max-height: 1000px;
+    max-height: fit-content;
     /* min-height: min-content; */
     /* height: 500px; */
     width: 350px;
@@ -21,7 +22,7 @@ body {
     align-items: center;
     flex-flow: column;
     padding: 20px 0px ;
-    margin: 300px;
+    margin: 20px;
     background-image: linear-gradient(to right, #4D4DFF, #C724B1);
 }
 
@@ -67,7 +68,7 @@ button {
     /* flex-grow: 1; */
     font-size:30px;
     padding: 0px 5px;
-    margin: 0px;
+    margin: 0px 0px 5px 0px;
     box-sizing: border-box;
 }
 
@@ -75,7 +76,7 @@ button {
     /* border: 2px solid black; */
     width: 100%;
     min-height: 40px;
-    font-size:45px;
+    font-size:40px;
     overflow-wrap: break-word;
 
     /* max-height: fit-content; */
