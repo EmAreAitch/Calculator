@@ -5,17 +5,19 @@ const result = document.querySelector(".result");
 const allClear = document.querySelector('.allClear');
 const clear = document.querySelector('.clear')
 const equal = document.querySelector('.equal');
+const dot = document.querySelector('.dot');
 
 // let input = [];
 function calculation(equation) {
     if (!(equation.includes(" ÷ 0"))) {
     input = equation.split(' ');
     input = input.map(item => {
-        if (!!(+item)) {
+        if (!isNaN(+item)) {
             return +item;
         }     
         else return item;
     });
+
     tier1 = input.filter(item => item == '÷' || item == '×' || item == '%');
     tier2 = input.filter(item => item == '+' || item == '-');
 
@@ -51,7 +53,7 @@ function calculation(equation) {
         }
     });
 
-    result.textContent = input[0]*10/10;}
+    result.textContent = Math.round(input[0]*100)/100;}
     
     else alert("Don't divide by zero you RETARD!!");
 }
@@ -87,3 +89,10 @@ equal.addEventListener('click', () => {
     _calculation.textContent != '' ? calculation(_calculation.textContent) : alert("Error!!");
 })
 
+dot.addEventListener('click', (e) => {
+        _calculation.textContent !== '' && _calculation.textContent.slice(-1) !== ' '
+        ? _calculation.textContent.includes('.', _calculation.textContent.lastIndexOf(' '))
+            ? alert('Invalid')
+            : _calculation.textContent += '.'
+        : _calculation.textContent += '0.'
+       })
