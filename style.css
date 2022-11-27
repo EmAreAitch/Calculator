@@ -35,9 +35,10 @@ body {
     /* flex: auto; */
     display: flex;
     /* flex-direction: column; */
-    align-items: flex-end; 
+    align-items: flex-end;
+    justify-content: space-between; 
     flex-flow: nowrap column;
-    margin-bottom: 20px;
+    /* margin-bottom: 20px; */
     text-align: end;
 }
 
@@ -50,13 +51,15 @@ body {
     justify-content: center;
 }
 
-button {
+.operations button {
     width: 70px;
     height: 70px;
     margin: 2.5px;
     font-size: x-large;
     border-radius: 20px;
     border-style:none;
+    background-color: black;
+    color: white;
 }
 
 .calculation {
@@ -66,7 +69,7 @@ button {
     max-height: max-content;
     overflow-wrap: break-word;
     /* flex-grow: 1; */
-    font-size:30px;
+    font-size:25px;
     padding: 0px 5px;
     margin: 0px 0px 5px 0px;
     box-sizing: border-box;
@@ -76,11 +79,22 @@ button {
     /* border: 2px solid black; */
     width: 100%;
     min-height: 40px;
-    font-size:40px;
+    font-size:45px;
     overflow-wrap: break-word;
 
     /* max-height: fit-content; */
     box-sizing: border-box;
     padding: 0px 5px;
     margin: 0px;
+}
+
+.clear {
+    align-self: flex-end;
+    margin-right: 35px;
+    background-color: transparent;
+    border-style: none;
+    width: 30px;
+    height: 30px;
+    padding: 0px;
+    font-size: 30px;
 }
