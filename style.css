@@ -1,15 +1,44 @@
 body {
     display: flex;
-    flex-flow: column;
+    flex-flow: row;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     height: 100vh;
     background: url(/assets/background.gif) center;
     background-size: cover;
     padding: 0px;
     margin: 0px;
+    font-family: customFont;
+    color: white;
+    padding: 0px 20px;
+}
+h1 {
+    font-size: 35px;
+    background: -webkit-linear-gradient(#4D4DFF, #C724B1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+a {
+    text-decoration: none;
+    background: -webkit-linear-gradient(#4D4DFF, #C724B1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.name {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+    justify-content: space-between;
+    align-self: stretch
 }
 
+.TOP {
+    display: flex;
+    /* align-content: flex-start; */
+    padding-top: 20px;
+    align-self: flex-start;
+}
 .calculator {
     max-height: fit-content;
     /* min-height: min-content; */
@@ -27,7 +56,8 @@ body {
 }
 
 .output {
-    border: 2px solid white;
+    /* padding: 0px 0px; */
+    border-radius: 10px;
     width: 300px;
     min-height: 90px;
     max-height: max-content;
@@ -40,6 +70,7 @@ body {
     flex-flow: nowrap column;
     /* margin-bottom: 20px; */
     text-align: end;
+    background-color: black;
 }
 
 .operations {
@@ -60,6 +91,8 @@ body {
     border-style:none;
     background-color: black;
     color: white;
+    font-family: customFont;
+    
 }
 
 .calculation {
@@ -70,9 +103,10 @@ body {
     overflow-wrap: break-word;
     /* flex-grow: 1; */
     font-size:25px;
-    padding: 0px 5px;
+    padding: 5px 5px 0px 0px;
     margin: 0px 0px 5px 0px;
     box-sizing: border-box;
+    color: white;
 }
 
 .result {
@@ -86,6 +120,9 @@ body {
     box-sizing: border-box;
     padding: 0px 5px;
     margin: 0px;
+    background: -webkit-linear-gradient(#4D4DFF, #C724B1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .clear {
@@ -97,4 +134,9 @@ body {
     height: 30px;
     padding: 0px;
     font-size: 30px;
+}
+
+@font-face {
+    font-family: customFont;
+    src: url(assets/goodtimesrg.otf);
 }

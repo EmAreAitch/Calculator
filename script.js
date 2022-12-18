@@ -7,11 +7,11 @@ const clear = document.querySelector('.clear')
 const equal = document.querySelector('.equal');
 const dot = document.querySelector('.dot');
 const brackets = document.querySelector('.brackets')
-const minus = document.querySelector('.minus')
+const sign = document.querySelector('.sign');
 
 oBracNo = 0;
 cBracNo = 0;
-// let input = [];
+
 function calculation(equation) {
     if (!(equation.includes(" ÷ 0"))) {
     input = equation.split(' ');
@@ -26,7 +26,8 @@ function calculation(equation) {
     tier1Calc(input);
     tier2Calc(input);
 
-    result.textContent = Math.round(input[0]*100)/100;}
+    result.textContent = Math.round(input[0]*100)/100;
+    }
     
     else alert("Don't divide by zero you RETARD!!");
 }
@@ -107,15 +108,16 @@ allClear.addEventListener('click', () => {
 })
 
 clear.addEventListener('click', () => {
-    !isNaN(parseInt(_calculation.textContent.slice(-1)))
+    !isNaN(parseInt(_calculation.textContent.slice(-1))) || _calculation.textContent.slice(-1) == '-'
     ? _calculation.textContent = _calculation.textContent.slice(0,-1)
     : _calculation.textContent.slice(-2).includes('( ') || _calculation.textContent.slice(-2).includes(' )')
         ? _calculation.textContent = _calculation.textContent.slice(0,-2)
         : _calculation.textContent = _calculation.textContent.slice(0,-3);
+    result.textContent='';
 })
 
 equal.addEventListener('click', () => {
-    _calculation.textContent != '' && _calculation.textContent.slice(-1) !== ' '
+    _calculation.textContent !== '' && _calculation.textContent.slice(-1) !== ' ' && _calculation.textContent.slice(-1) !== '-'
      ? calculation(_calculation.textContent) : alert("Error!!");
 })
 
@@ -134,3 +136,15 @@ brackets.addEventListener('click', () => {
         : (_calculation.textContent += ' × ( ', oBracNo++)
     : (_calculation.textContent += '( ',oBracNo++)
 })
+
+sign.addEventListener('click', () => {
+    _calculation.textContent === '' || _calculation.textContent.slice(-1) === ' '
+    ? _calculation.textContent += '-'
+    : _calculation.textContent.slice(-1) == ')'
+        ? _calculation.textContent += ' × -'
+        : _calculation.textContent.lastIndexOf(' ') !== -1
+            ?_calculation.textContent = `${_calculation.textContent.slice(0,_calculation.textContent.lastIndexOf(' ')+1)}-${_calculation.textContent.slice(_calculation.textContent.lastIndexOf(' ')+1)}`
+            : _calculation.textContent = `-${_calculation.textContent}`
+    }    
+
+)
