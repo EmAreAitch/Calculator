@@ -4,7 +4,7 @@ body {
     align-items: center;
     justify-content: space-between;
     height: 100vh;
-    background: url(/assets/background.gif) center;
+    background: url(assets/background.gif) center;
     background-size: cover;
     padding: 0px;
     margin: 0px;
